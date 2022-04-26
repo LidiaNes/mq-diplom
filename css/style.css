@@ -20,6 +20,10 @@
 
 .page {
     font-family: "Open Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 65px;
 }
 
 .header {
@@ -104,7 +108,7 @@ ul {
 
 .section-trend {
     width: 100%;
-    margin: auto;
+    margin: 50px auto 0 auto;
 }
 
 .posts-header::after {
@@ -118,7 +122,6 @@ ul {
 }
 
 .posts-name{
-    margin-top: 64px;
     text-align: center;
     font-size: 16px;
     font-weight: bold;
@@ -183,25 +186,22 @@ ul {
 
 .box-title {
     display: block;
-    margin-top: 5px;
     text-decoration: none;
     font-family: inherit;
     font-weight: bold;
     font-size: 20px;
     line-height: 25px;
     text-transform: uppercase;
-    color: #ffffff
+    color: #ffffff;
 }
 
 .content {
-    width: 1200px;
+    max-width: 1200px;
+    gap: 120px;
     display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
     padding-left: 15px;
     padding-right: 15px;
-    justify-content: space-between;
-    margin: 63px auto 105px;
+    margin: auto;
 }
 
 main {
@@ -277,7 +277,7 @@ main {
     color: #000000;
 }
 
-p {
+.text-article-frame {
     font-family: inherit;
     font-size: 15px;
     line-height: 25px;
@@ -466,7 +466,7 @@ input {
 .section-product {
     max-width: 1200px;
     margin: auto;
-    padding: 30px 15px 29px 15px;
+    padding: 0 15px 29px 15px;
 }
 
 .container-products {
@@ -494,6 +494,10 @@ input {
     padding: 50px 20px 26px 20px;
     margin: -30px -20px 0px -20px;
     height: 100%;
+}
+
+.product {
+    color: #000000;
 }
 
 .summary-product {
@@ -533,7 +537,9 @@ input {
     font-family: "Open Sans Bold";
 }
 .button-shop {
-    padding: 20px 28px 20px 28px;
+    width: 50%;
+    height: 100%;
+    padding: 20px 20px;
     background-color: #b59f5b;
     font-size: 14px;
     color: #ffffff;
@@ -547,24 +553,34 @@ input {
     background-color: #323232;
 }
 
-.article-footer{
+.article-footer {
     opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 0px;
 }
 
 .container-footer {
-    width: 1200px;
-    height: 83px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 64px;
+    margin-bottom: 0px;
     background-color: #f5f7f6;
 }
 
 .socials {
     display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
     list-style-type: none;
     justify-content: center;
     background-color: #f4f7f6;
+    position: relative;
+    gap: 28px;
 }
 
 .socials-link {
@@ -766,6 +782,206 @@ input {
   margin-top: 17px;
 }
 
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .page {
+    gap: 44px;
+  }
+  .header{
+    background-image: url(../images/banner-bg.jpg);
+    background-size: cover;
+  }
+  .header-menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    position: relative;
+    width: 23px;
+    height: 20px;
+    align-self: end;
+  }
+  .burger::before, .burger::after{
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 3px;
+  }
+  .burger::before {
+    top: 0px;
+  }
+  .burger::after {
+    bottom: 0px;
+  }
+  .nav-burger {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 3px;
+    top: 8px;
+  }
+  .header {
+    width: 100%;
+    background-image: url(../images/banner-mobile.jpg);
+    padding: 2em 0.9em 13.7em 0.9em;
+  }
+  .container {
+    flex-direction: column-reverse;
+    gap: 11.6rem;
+    width: 100%;
+    align-items: center;
+  }
+  .header-menu {
+    flex-direction: column-reverse;
+    gap: 11.6rem;
+  }
+  .header-logo { 
+    width: 273px;
+    height: 52px;
+  }
+  .header-title {
+    font-size: 1.6rem;
+    line-height: 2.25rem;
+    max-width: 276px;
+    margin-top: 45px;
+  }
+  .container-box {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .trend-box {
+    width: 100%;
+  }
+  .content {
+    flex-direction: column;
+    gap: 44px;
+    padding: 0 4%;
+  }
+  .post,
+  .product-box {
+    width: 100%;
+  }
+  .section-product {
+    padding: 0 4%;
+  }
+  .container-products {
+    flex-direction: column;
+    gap: 27px;
+  }
+  .posts-name {
+    font-size: 1rem;
+  }
+  .post-list {
+    flex-direction: column;
+  }
+  .aside-bar {
+    width: 100%;
+  }
+  .link {
+    font-size: 0.9rem;
+  }
+  .box-title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 640px) and (orientation: landscape) {
+  .header-menu {
+    display: none;
+  }
+  .burger {
+    display: block;
+    position: relative;
+    width: 23px;
+    height: 19px;
+  }
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 3px;
+  }
+  .burger::before {
+    top: 0px;
+  }
+  .burger::after {
+    bottom: 0px;
+  }
+  .nav-burger {
+    content: "";
+    position: absolute;
+    background-color: #ffffff;
+    width: 100%;
+    height: 3px;
+    top: 8px;
+  }
+  .header {
+    width: 100%;
+    background-image: url(../images/banner-mobile.jpg);
+  }
+  .container {
+    width: 100%;
+    padding: 224px 45px 45px 45px; 
+  }
+  .header-menu {
+    flex-direction: column-reverse;
+    gap: 11.6rem;
+  }
+  .burger {
+    align-self: end;
+  }
+  .header-logo { 
+    width: 271px;
+  }
+  .header-title {
+    font-size: 1.6rem;
+    line-height: 2.25rem;
+    max-width: 276px;
+    margin-top: 45px;
+  }
+  .content {
+    flex-direction: column;
+    gap: 44px;
+    padding: 0 4%;
+  }
+  .post,
+  .product-box {
+    width: 100%;
+  }
+  .section-product {
+    padding: 0 4%;
+  }
+  .container-products {
+    flex-direction: column;
+    gap: 27px;
+  }
+  .posts-name {
+    font-size: 1rem;
+  }
+  .post-list {
+    flex-direction: column;
+  }
+  .aside-bar {
+    width: 100%;
+  }
+  .link {
+    font-size: 0.9rem;
+  }
+  .box-title {
+    font-size: 1rem;
+  }
+  .container-box {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .trend-box {
+    width: 48%;
+  }
+}
+
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
   .page {
     gap: 50px;
@@ -819,13 +1035,13 @@ input {
   .header-logo {
     width: 10em;
   }
-  .section-trend,
   .post-list-picture,
   .product-img,
   .trend-content {
     width: 100%;
   }
   .container-box {
+    display: flex;
     flex-wrap: wrap;
   }
   .trend-box {
@@ -933,7 +1149,7 @@ input {
     width: 10em;
   }
   .trend-box {
-    width: calc((100% - 12px) / 4);
+    width: 48%;
   }
   .content {
     width: 100%;
@@ -954,198 +1170,4 @@ input {
   .product-box:nth-child(3) {
     margin-top: 4%;
   }
-}
-@media (max-width: 640px) and (orientation: portrait) {
-  .page {
-    gap: 44px;
-  }
-  .header-menu {
-    display: none;
-  }
-  .burger {
-    display: block;
-    position: relative;
-    width: 23px;
-    height: 19px;
-  }
-  .burger::before,
-  .burger::after {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    height: 3px;
-  }
-  .burger::before {
-    top: 0px;
-  }
-  .burger::after {
-    bottom: 0px;
-  }
-  .nav-burger {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    height: 3px;
-    top: 8px;
-  }
-  .header {
-    width: 100%;
-    background-image: url(../images/banner-mobile.jpg);
-  }
-  .container {
-    padding: 2em 0.9em 13.7em 0.9em;
-  }
-  .header-menu {
-    flex-direction: column-reverse;
-    gap: 11.6rem;
-  }
-  .burger {
-    align-self: end;
-  }
-  .header-logo { 
-    width: 269px;
-  }
-
-  .header-title {
-    font-size: 1.6rem;
-    line-height: 2.25rem;
-    max-width: 276px;
-    margin-top: 45px;
-  }
-  
-  .container-box {
-    flex-direction: column;
-    gap: 3px;
-  }
-  .trend-box {
-    width: 100%;
-  }
-  .content {
-    flex-direction: column;
-    gap: 44px;
-    padding: 0 4%;
-  }
-  .post,
-  .product-box {
-    width: 100%;
-  }
-  .section-product {
-    padding: 0 4%;
-  }
-  .container-products {
-    flex-direction: column;
-    gap: 27px;
-  }
-  .posts-name {
-    font-size: 1rem;
-  }
-  .post-list {
-    flex-direction: column;
-  }
-  .aside-bar {
-    width: 100%;
-  }
-  .link {
-    font-size: 0.9rem;
-  }
-  .box-title {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 640px) and (orientation: landscape) {
-  .header-menu {
-    display: none;
-  }
-  .burger {
-    display: block;
-    position: relative;
-    width: 23px;
-    height: 19px;
-  }
-  .burger::before,
-  .burger::after {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    height: 3px;
-  }
-  .burger::before {
-    top: 0px;
-  }
-  .burger::after {
-    bottom: 0px;
-  }
-  .nav-burger {
-    content: "";
-    position: absolute;
-    background-color: #ffffff;
-    width: 100%;
-    height: 3px;
-    top: 8px;
-  }
-  .header {
-    width: 100%;
-    background-image: url(../image/banner-mobile.jpg);
-  }
-  .container {
-    padding: 2em 0.9em 13.7em 0.9em;
-  }
-  .header-menu {
-    flex-direction: column-reverse;
-    gap: 11.6rem;
-  }
-  .burger {
-    align-self: end;
-  }
-  .header-logo { 
-    width: 269px;
-  }
-  .header-title {
-    font-size: 1.6rem;
-    line-height: 2.25rem;
-    max-width: 276px;
-    margin-top: 45px;
-  }
-  .content {
-    flex-direction: column;
-    gap: 44px;
-    padding: 0 4%;
-  }
-  .post,
-  .product-box {
-    width: 100%;
-  }
-  .section-product {
-    padding: 0 4%;
-  }
-  .container-products {
-    flex-direction: column;
-    gap: 27px;
-  }
-  .posts-name {
-    font-size: 1rem;
-  }
-  .post-list {
-    flex-direction: column;
-  }
-  .aside-bar {
-    width: 100%;
-  }
-  .link {
-    font-size: 0.9rem;
-  }
-  .box-title {
-    font-size: 1rem;
-  }
-  .container-box {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  .trend-box {
-    width: 48%;
-  }
-
 }
